@@ -15,7 +15,7 @@ const MyApp: AppType = ({ Component, pageProps }) => {
     <>
       <Head>
         <meta charSet="UTF-8" />
-        <title>{router.query.name} | Thanksgiving</title>
+        <title>Invitation | FGACYCYW Thanksgiving</title>
         <meta
           name="description"
           content="Join us as we gather to give thanks and celebrate the blessings of the past year. Our special Thanksgiving service will be a time of reflection, gratitude, and community."
