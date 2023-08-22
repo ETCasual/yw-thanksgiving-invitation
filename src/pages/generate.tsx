@@ -48,7 +48,9 @@ const Generate = () => {
                 : "Copied!"}
             </button>
           )}
-          {name && <p className="w-full text-right text-xs">Click to copy</p>}
+          {name && (
+            <p className="w-full text-right text-xs">Click above to copy</p>
+          )}
           {name && data && (
             <div
               className={`mt-2 flex flex-row items-center rounded-md ${
@@ -64,7 +66,7 @@ const Generate = () => {
                   : "is not coming.. 😢"}
               </p>
             </div>
-          )}{" "}
+          )}
         </div>
       </div>
     </main>
