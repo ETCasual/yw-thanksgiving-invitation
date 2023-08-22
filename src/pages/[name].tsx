@@ -24,9 +24,10 @@ const Home: NextPage = () => {
                 onClick={() => setState((prev) => prev + 1)}
               >
                 <p>
-                  Dear <strong>{router.query.name}</strong>,
+                  Dear <strong>{router.query.name} 🍁🌾</strong>,
                 </p>
-                <Typewriter text="Join us as we gather to give thanks and celebrate the blessings of the past year. Our special Thanksgiving service will be a time of reflection, gratitude, and community." />
+                <Typewriter text="You are cordially invited to join Young Warrior Thanksgiving Special Service this weekend!" />
+                <Typewriter text="Feel free to arrive earlier to fellowship with other pastors; tidbits & beverages and dinner will be ready at L4-6 Pastors Lounge (2pm-3pm & 4.30pm-6pm)." />
               </Slide>
             ) : state === 2 ? (
               <Slide
@@ -34,31 +35,32 @@ const Home: NextPage = () => {
                 onClick={() => setState((prev) => prev + 1)}
               >
                 <Typewriter text="📅 Date: 26/8/2023, Saturday" />
-                <Typewriter text="⏰ Time: 3pm" />
-                <Typewriter text="🏛 Location: Wisma FGA, L5" />
+                <Typewriter text="⏰ Preshow: 2.30pm" />
+                <Typewriter text="⛪ Service Starts: 3.00pm" />
+                <Typewriter text="🏛 Venue: Wisma FGA KL, L5" />
+                <Typewriter text="👕 Dresscode: Pink, Blue, Black, White" />
               </Slide>
             ) : state === 3 ? (
               <Slide
                 nextText="Next"
                 onClick={() => setState((prev) => prev + 1)}
               >
-                <Typewriter text="- Experience Hall" />
-                <Typewriter text="- Inspirational Praise and Worship" />
-                <Typewriter text="- Sharing of Gratitude" />
-                <Typewriter text="- Fellowship and Refreshments" />
+                <Typewriter text="- Preshow and Performance" />
+                <Typewriter text="- Revival Experience Hall" />
+                <Typewriter text="- Fellowship and Refreshment" />
               </Slide>
             ) : state === 4 ? (
               <Slide
                 nextText="Next"
                 onClick={() => setState((prev) => prev + 1)}
               >
-                <Typewriter text="Please RSVP by [24th August 2023] to ensure we have enough seating and refreshments for everyone. We look forward to sharing this meaningful occasion with you and your loved ones." />
+                <Typewriter text="Looking forward to having you this Saturday! Do RSVP before [24th August 2023]. Let us come together to see beautiful things that God has done in Young Warrior; and together we will build and raise up a stronger generation!" />
               </Slide>
             ) : state === 5 ? (
               <Slide nextText="RSVP" onClick={() => setModalOpen(true)}>
-                <Typewriter text="Dresscode will be set and bring your thankful heart! Let's come together to rejoice in the spirit of Thanksgiving." />
-                <div className="h-[20px] w-full" />
                 <p>With Gratitude, Young Warrior 🚀</p>
+                <div className="h-[20px] w-full" />
+                <Typewriter text="See You!" />
               </Slide>
             ) : null}
           </div>

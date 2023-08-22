@@ -7,10 +7,8 @@ import NoSSR from "react-no-ssr";
 import "@/styles/globals.css";
 import "swiper/css";
 import Head from "next/head";
-import { useRouter } from "next/router";
 
 const MyApp: AppType = ({ Component, pageProps }) => {
-  const router = useRouter();
   return (
     <>
       <Head>
