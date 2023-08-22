@@ -40,7 +40,7 @@ const Generate = () => {
                   .then(() => setCopied(true));
               }}
               className={`mt-2 truncate rounded-md font-bold ${
-                !copied ? "bg-gray-300 text-black" : "bg-green-500 text-white"
+                !copied ? "bg-gray-300 text-black" : "bg-green-500 text-black"
               } bg-gray-300 px-2 py-1`}
             >
               {!copied
