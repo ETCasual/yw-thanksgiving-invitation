@@ -1,15 +1,23 @@
+/* eslint-disable @typescript-eslint/no-misused-promises */
 import { Dialog, Transition } from "@headlessui/react";
-import { Fragment, type FunctionComponent } from "react";
+import { ref, set } from "firebase/database";
+import { Fragment, useState, type FunctionComponent } from "react";
+import { useDatabase } from "reactfire";
 
 interface ModalProps {
   isOpen: boolean;
   closeModal: () => void;
+  name: string;
 }
 
 export const Modal: FunctionComponent<ModalProps> = ({
   isOpen,
   closeModal,
+  name,
 }) => {
+  const db = useDatabase();
+  const [state, setState] = useState<number>(1);
+
   return (
     <Transition appear show={isOpen} as={Fragment}>
       <Dialog as="div" className="relative z-10" onClose={closeModal}>
@@ -41,28 +49,48 @@ export const Modal: FunctionComponent<ModalProps> = ({
                   as="h3"
                   className="text-center text-lg font-medium leading-6 text-gray-900"
                 >
-                  Will you be joining us on this special occasion?
+                  {state === 1
+                    ? "Will you be joining us on this special occasion?"
+                    : state === 2
+                    ? "Great! See you this Saturday! 🎉"
+                    : "Aw... Do join us next time 😢."}
                 </Dialog.Title>
 
                 <div className="mt-4 flex w-full flex-col gap-2">
-                  <button
-                    type="button"
-                    className="inline-flex justify-center rounded-md border border-transparent bg-green-500 px-4 py-2 text-sm font-medium text-white focus:outline-none"
-                    onClick={() => {
-                      closeModal();
-                    }}
-                  >
-                    Yes!
-                  </button>
-                  <button
-                    type="button"
-                    className="inline-flex justify-center rounded-md border border-transparent bg-red-500 px-4 py-2 text-sm font-medium text-white"
-                    onClick={() => {
-                      closeModal();
-                    }}
-                  >
-                    Sadly no :(
-                  </button>
+                  {state === 1 ? (
+                    <button
+                      type="button"
+                      className="inline-flex justify-center rounded-md border border-transparent bg-green-500 px-4 py-2 text-sm font-medium text-white focus:outline-none"
+                      onClick={async () => {
+                        await set(ref(db, `invitation/${name}`), {
+                          attendance: true,
+                        }).then(() => setState(2));
+                      }}
+                    >
+                      Yes!
+                    </button>
+                  ) : (
+                    <button
+                      type="button"
+                      className="inline-flex justify-center rounded-md border border-transparent bg-green-500 px-4 py-2 text-sm font-medium text-white focus:outline-none"
+                      onClick={closeModal}
+                    >
+                      Close
+                    </button>
+                  )}
+                  {state === 1 && (
+                    <button
+                      type="button"
+                      className="inline-flex justify-center rounded-md border border-transparent bg-red-500 px-4 py-2 text-sm font-medium text-white"
+                      onClick={async () => {
+                        await set(ref(db, `invitation/${name}`), {
+                          attendance: false,
+                        }).then(() => setState(3));
+                      }}
+                    >
+                      Sadly no :(
+                    </button>
+                  )}
                 </div>
               </Dialog.Panel>
             </Transition.Child>

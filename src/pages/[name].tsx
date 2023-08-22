@@ -70,7 +70,11 @@ const Home: NextPage = () => {
           </div>
         </div>
       </main>
-      <Modal isOpen={modalOpen} closeModal={() => setModalOpen(false)} />
+      <Modal
+        isOpen={modalOpen}
+        closeModal={() => setModalOpen(false)}
+        name={String(router.query.name)}
+      />
     </>
   );
 };
