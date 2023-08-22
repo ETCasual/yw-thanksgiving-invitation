@@ -2,7 +2,6 @@ import { Modal } from "@/components/Modal";
 import { Slide } from "@/components/SwiperSlide";
 import { Typewriter } from "@/components/Typewriter";
 import type { NextPage } from "next";
-import Head from "next/head";
 import { useRouter } from "next/router";
 import { useState } from "react";
 
@@ -13,11 +12,6 @@ const Home: NextPage = () => {
   const [modalOpen, setModalOpen] = useState(false);
   return (
     <>
-      <Head>
-        <title>Thanksgiving | FGACYCYW</title>
-        <meta name="description" content="Unstoppable" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
       <main className="flex min-h-screen flex-col items-center justify-center bg-[url('/Base_UNS.png')] bg-cover bg-center">
         <div className="container flex flex-col items-center justify-center gap-12 px-4 py-16">
           <div className="flex w-[320px]  flex-col rounded-xl bg-white p-4 text-black shadow-lg">
