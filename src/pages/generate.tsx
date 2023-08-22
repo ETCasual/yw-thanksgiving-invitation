@@ -33,7 +33,7 @@ const Generate = () => {
             <button
               onClick={() => {
                 const text = `https://invitation.fgacycyw.com/invite/${encodeURI(
-                  name
+                  name.trim()
                 )}`;
                 void navigator.clipboard
                   .writeText(text)
@@ -57,7 +57,7 @@ const Generate = () => {
                 data.attendance ? "bg-green-500" : "bg-red-400"
               } px-2 py-1 text-white`}
             >
-              <p>
+              <p className="truncate">
                 {name}{" "}
                 {typeof data.attendance === "undefined"
                   ? "No RSVP yet. ⌛"
