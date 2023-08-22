@@ -6,16 +6,28 @@ import { firebaseConfig } from "@/lib/firebaseConfig";
 import NoSSR from "react-no-ssr";
 import "@/styles/globals.css";
 import "swiper/css";
+import Head from "next/head";
 
 const MyApp: AppType = ({ Component, pageProps }) => {
   return (
-    <FirebaseAppProvider firebaseConfig={firebaseConfig}>
-      <FirebaseProps>
-        <NoSSR>
-          <Component {...pageProps} />
-        </NoSSR>
-      </FirebaseProps>
-    </FirebaseAppProvider>
+    <>
+      <Head>
+        <meta charSet="UTF-8" />
+        <title>Thanksgiving | FGACYCYW</title>
+        <meta
+          name="description"
+          content="Join us as we gather to give thanks and celebrate the blessings of the past year. Our special Thanksgiving service will be a time of reflection, gratitude, and community."
+        />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+      <FirebaseAppProvider firebaseConfig={firebaseConfig}>
+        <FirebaseProps>
+          <NoSSR>
+            <Component {...pageProps} />
+          </NoSSR>
+        </FirebaseProps>
+      </FirebaseAppProvider>
+    </>
   );
 };
 
