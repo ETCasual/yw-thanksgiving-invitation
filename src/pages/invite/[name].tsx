@@ -15,9 +15,7 @@ const Home: NextPage = () => {
       <main className="flex min-h-screen flex-col items-center justify-center bg-[url('/Base_UNS.png')] bg-cover bg-center">
         <div className="container flex flex-col items-center justify-center gap-12 px-4 py-16">
           <div className="flex w-[320px]  flex-col rounded-xl bg-white p-4 text-black shadow-lg">
-            <h1 className="mb-2 font-tungsten text-3xl font-bold">
-              YW Thanksgiving 🎉
-            </h1>
+            <h1 className="mb-2 font-tungsten text-3xl">YW Thanksgiving 🎉</h1>
             {state === 1 ? (
               <Slide
                 nextText="Details"
