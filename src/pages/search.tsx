@@ -19,7 +19,7 @@ const SearchPage = () => {
           onChange={(e) => setSearchString(e.currentTarget.value)}
           className="mb-2 mt-1 rounded-md border border-black px-2 py-1 focus-within:outline-none"
         />
-        <div className="flex max-h-[90vh] w-[320px] flex-col rounded-xl bg-white p-4 text-black shadow-lg">
+        <div className="flex max-h-[70vh] w-[320px] flex-col overflow-y-scroll rounded-xl bg-white p-4 text-black shadow-lg">
           {data &&
             Object.entries(data)
               .filter(
