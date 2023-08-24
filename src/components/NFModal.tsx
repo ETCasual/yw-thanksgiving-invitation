@@ -65,7 +65,12 @@ export const NFModal: FunctionComponent<ModalProps> = ({
                       className="inline-flex justify-center rounded-md border border-transparent bg-green-500 px-4 py-2 text-sm font-medium text-white focus:outline-none"
                       onClick={async () => {
                         await set(
-                          ref(db, `invitation/${name.replaceAll(".", "-")}`),
+                          ref(
+                            db,
+                            `invitation/${name
+                              .replaceAll(".", "-")
+                              .replaceAll("&", "-")}`
+                          ),
                           {
                             attendance: true,
                           }
@@ -89,7 +94,12 @@ export const NFModal: FunctionComponent<ModalProps> = ({
                       className="inline-flex justify-center rounded-md border border-transparent bg-red-500 px-4 py-2 text-sm font-medium text-white"
                       onClick={async () => {
                         await set(
-                          ref(db, `invitation/${name.replaceAll(".", "-")}`),
+                          ref(
+                            db,
+                            `invitation/${name
+                              .replaceAll(".", "-")
+                              .replaceAll("&", "-")}`
+                          ),
                           {
                             attendance: false,
                           }
