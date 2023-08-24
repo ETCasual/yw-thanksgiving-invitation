@@ -36,7 +36,7 @@ const Home: NextPage = () => {
                 <Typewriter text="⏰ Preshow: 2.30pm" />
                 <Typewriter text="⛪ Service Starts: 3.00pm" />
                 <Typewriter text="🏛 Venue: Wisma FGA KL, L5" />
-                <Typewriter text="👕 Dresscode: Red, Black, White" />
+                <Typewriter text="👕 Dresscode: Pink, Blue, Black, White" />
               </Slide>
             ) : state === 3 ? (
               <Slide
